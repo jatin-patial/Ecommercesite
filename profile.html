@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Profile - JP Mart</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>JP Mart</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="wishlist.html">Wishlist</a>
+      <a href="orders.html">Orders</a>
+      <a href="checkout.html">Cart</a>
+    </nav>
+  </header>
+
+  <main class="profile-card">
+    <h2>My Profile</h2>
+    <form onsubmit="saveProfile(event)">
+      <input type="email" id="email" required />
+      <input type="text" id="fullname" required placeholder="Full Name" />
+      <button type="submit" class="btn">Save</button>
+    </form>
+    <button class="btn danger" onclick="logout()">Logout</button>
+  </main>
+
+  <script>
+    const user = JSON.parse(localStorage.getItem("loggedInUser")) || "";
+    document.getElementById("email").value = user;
+    document.getElementById("fullname").value = localStorage.getItem("fullname") || "";
+
+    function saveProfile(e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const fullname = document.getElementById("fullname").value;
+      localStorage.setItem("loggedInUser", JSON.stringify(email));
+      localStorage.setItem("fullname", fullname);
+      alert("Profile saved!");
+    }
+
+    function logout() {
+      localStorage.removeItem("loggedIn");
+      localStorage.removeItem("loggedInUser");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>

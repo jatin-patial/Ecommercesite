@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login - JP Mart</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="profile-card">
+    <h2>Login to JP Mart</h2>
+    <form onsubmit="login(event)">
+      <input type="email" id="email" required placeholder="Email" />
+      <input type="password" id="password" required placeholder="Password" />
+      <button type="submit" class="btn">Login</button>
+    </form>
+    <p>Don't have an account? <a href="signup.html">Signup</a></p>
+  </main>
+  <script>
+    function login(e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      localStorage.setItem("loggedIn", true);
+      localStorage.setItem("loggedInUser", JSON.stringify(email));
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

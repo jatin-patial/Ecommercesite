@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JP Mart</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <script defer src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container nav-container">
+      <h1 class="logo">🛍️ JP Mart</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <div id="cart-icon" onclick="toggleCart()">🛒 <span id="cart-count">0</span></div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <div>
+        <h2>Welcome to JP Mart</h2>
+        <p>Best deals, handcrafted products, and more.</p>
+        <a href="#products" class="btn">✨ Shop Now</a>
+      </div>
+      
+    </div>
+  </section>
+
+  <section class="features container">
+    <div class="feature-card">🚚 Free Delivery</div>
+    <div class="feature-card">🛒 Quality Products</div>
+    <div class="feature-card">🔐 Secure Payment</div>
+    <div class="feature-card">💖 Customer First</div>
+  </section>
+
+  <main class="container">
+    <h2 class="section-title">Our Products</h2>
+    <section class="products" id="products">
+    </section>
+    <div class="checkout-section hidden" id="checkout-section">
+      <h3>Checkout</h3>
+      <ul id="checkout-list"></ul>
+      <p><strong>Total:</strong> ₹<span id="checkout-total">0</span></p>
+      <button class="btn" onclick="placeOrder()">Place Order</button>
+    </div>
+  </main>
+
+  <div id="cart-modal" class="cart-modal hidden">
+    <h2>Your Cart</h2>
+    <ul id="cart-items"></ul>
+    <button class="btn" onclick="goToCheckout()">Go to Checkout</button>
+    <button class="btn" onclick="toggleCart()">Close</button>
+  </div>
+
+  <section id="about" class="container about-section">
+    <h2>About Us</h2>
+    <p>JP Mart is an initiative by a student, Jatin Patial, to bring quality products to your fingertips. With a wide variety of handpicked items, our mission is to make shopping easy, joyful, and reliable.</p>
+  </section>
+
+  <section id="contact" class="container contact-section">
+    <h2>Contact Us</h2>
+    <div class="founders">
+      <div class="founder">
+        <h3>Jatin Patial</h3>
+        <p>Email: <a href="mailto:jatinpatial4433@gmail.com">jatinpatial4433@gmail.com</a></p>
+        <p>Phone: <a href="tel:7018975703">7018975703</a></p>
+      </div>
+     
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 JP Mart | Designed with 💜 by Jatin Patial</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Orders - JP Mart</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="profile-card">
+    <h2>Past Orders</h2>
+    <ul id="orders"></ul>
+  </main>
+
+  <script>
+    const orders = JSON.parse(localStorage.getItem("orders")) || [];
+    const ul = document.getElementById("orders");
+
+    if (!orders.length) {
+      ul.innerHTML = "<li>No orders yet.</li>";
+    } else {
+      orders.forEach(order => {
+        const li = document.createElement("li");
+        li.innerHTML = `<strong>${order.id}</strong> - ${order.date} - $${order.total.toFixed(2)}`;
+        ul.appendChild(li);
+      });
+    }
+  </script>
+</body>
+</html>
